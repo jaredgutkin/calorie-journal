@@ -1,12 +1,14 @@
 const express = require('express')
 const cors = require('cors')
 const colors = require('colors')
-const monogoose = require('mongoose')
-
 const dotenv = require('dotenv').config()
+const connectDB = require('./config/db')
+const port = process.env.PORT || 5000
+
+connectDB()
 
 const app = express()
-const port = process.env.PORT || 5000
+
 
 app.use(cors())
 app.use(express.json())
